@@ -1,0 +1,15 @@
+<div>
+    <p>Componente padre</p>
+    <!-- componentes hijos dentro del este componete padre> -->
+    <app-hijo></app-hijo>
+    <!-- variable del selector hijo = variabla padre -->
+    <app-hijo [mensaje]="mensajePadre[ 0]"></app-hijo>
+    <app-hijo [mensaje]="mensajePadre[1]"></app-hijo>
+    <app-hijo [mensaje]="mensajePadre[2]"></app-hijo>
+    
+    <!-- cojo el evenemitter que viente a traves de la funcion del hijo alerta pulsada y creo otra funcion para recibir el dato en el padre que es este en su ts  -->
+    <!-- el dato entra por el $event  -->
+    <app-hijo2 (alertaPulsada)="alertaDesdeElHijo2($event)"></app-hijo2>
+
+    
+</div>

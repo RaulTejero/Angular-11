@@ -1,0 +1,21 @@
+<h1>Evente binding</h1>
+<!-- los eventos se definen entre () -->
+<!-- a la derecha del = la funcion a ejecutar y creada en el ts -->
+<button  (click)="suma()">{{resultSuma}}</button>
+<br>
+<p>{{initial}}</p>
+<button (click)="chrono()">start</button>
+<br>
+<!-- pasar el evento del objeto co $event, en el html pasas el parametro-->
+<button (click)="onClick($event)">{{text}}</button> 
+<br>
+<select (change)="onChange($event)">
+    <option value="uno">1</option>
+    <option value="dos">2</option>
+</select>
+<p>{{valueSelect}}</p>
+
+<!-- eventos  -->
+
+<input (mouseenter)="onMouseenter($event)" (mouseout)="onMouseout($event)" (input)="onInput($event)"> 
+<p >{{valueInput}}</p>

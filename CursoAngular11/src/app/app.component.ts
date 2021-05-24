@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CursoAngular11';
+  campoTextoVariable: string;
+  constructor() {
+    this.campoTextoVariable = "NgModel por defecto"
+  }
+  onClick() {
+    console.log("ngmodel");
+    this.campoTextoVariable = "He cambiado con el button"
+  }
 }
