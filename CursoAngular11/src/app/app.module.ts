@@ -13,6 +13,8 @@ import { EventBindingComponent } from './components/event-binding/event-binding.
 import { CalcComponent } from './components/calc/calc.component';
 import { NgModelComponent } from './components/ng-model/ng-model.component';
 import { FormsModule } from '@angular/forms';
+import { CicloVidaComponent } from './components/ciclo-vida/ciclo-vida.component';
+import { DirectivasComponent } from './components/directivas/directivas.component';
 
 //este decorador crea la clase en un modulo de Angular
 @NgModule({
@@ -28,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     EventBindingComponent,
     CalcComponent,
     NgModelComponent,
+    CicloVidaComponent,
+    DirectivasComponent,
   ],
   // importacion de modulosesternos de Angular o terceros y que puedan utilizarlo nuestros elementos.
    // formomodule para directiva  ngModuelo

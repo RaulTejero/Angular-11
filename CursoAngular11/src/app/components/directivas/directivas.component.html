@@ -1,0 +1,10 @@
+<h1>Directivas</h1>
+
+<p [ngStyle]="{color:'red', fontSize:'24px'}">Directiva ngStyle</p>
+<!-- recuerda evalua lo de la derecha -->
+<p [ngStyle]="parrafoColor">Directiva ngStyle</p>
+
+
+<input type="text" [(ngModel)]="color.color" [ngStyle]="color" >
+<br>
+<input (input)="onInput($event)" type="range" min="0" max="100" step="10">

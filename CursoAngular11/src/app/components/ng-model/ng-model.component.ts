@@ -8,12 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class NgModelComponent implements OnInit {
 
   campoTextoVariable: string;
+
+  persona:any;
+
   constructor() {
-    this.campoTextoVariable = "NgModel por defecto"
+
+    this.campoTextoVariable = "NgModel por defecto";
+    this.persona = {};
+
   }
  
 
   ngOnInit(): void {
+  }
+
+  onClick(){
+    this.campoTextoVariable = "cambio con un click"
+    
   }
 
 }

@@ -1,5 +1,13 @@
-<h2>ngModel</h2>
+<h2>ngModel TwoBinding</h2>
 <!-- importar formsModule y ngModel se convierte en value modificable por el defecto -->
 <input type="text" [(ngModel)]="campoTextoVariable">
 <p>{{campoTextoVariable}}</p>
+<button (click)="onClick()">cambia la variable</button>
+<h3>twobinding con obj</h3>
+<div>
+    <input type="text" placeholder="nombre" [(ngModel)]="persona.nombre">
+    <input type="text" placeholder="apellido"  [(ngModel)]="persona.apellidos">
+    <p>Me llamo {{persona.nombre}} {{persona.apellidos}}</p>
+    <p>{{persona| json}}</p>
+</div>
 
