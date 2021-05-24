@@ -30,5 +30,8 @@ Básico de  Angular 11
 - ng generate component nombre 
 - ng g c 
 - ng generate component nombre --skipTests
+- interface
+- pipe
+- ...
 
-## Gerarquia de componentes
+## Codigo lleno de comentarios para seguir la estructura
