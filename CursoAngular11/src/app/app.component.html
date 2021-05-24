@@ -3,13 +3,7 @@
 <app-interpolacion></app-interpolacion>
 <app-property-binding></app-property-binding>
 <app-event-binding></app-event-binding>
-
-<h2>ngModel</h2>
-<!-- importar formsModule y ngModel se convierte en value modificable por el defecto -->
-<input type="text" [(ngModel)]="campoTextoVariable">
-<p>{{campoTextoVariable}}</p>
-<button (onClick)="onClick()">Cambiar la variable</button>
-
+<app-ng-model></app-ng-model>
 <h2>app calc</h2>
 <app-calc></app-calc>
 <!-- <router-outlet></router-outlet> -->
