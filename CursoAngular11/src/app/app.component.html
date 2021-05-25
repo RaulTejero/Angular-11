@@ -8,4 +8,24 @@
 <app-directivas></app-directivas>
 <h2>app calc</h2>
 <app-calc></app-calc>
-<!-- <router-outlet></router-outlet> -->
+<div>
+    <h1>Rutas</h1>
+    <ul>
+        <li><a routerLinkActive="activa" [routerLink] = "['/info']">Informacion</a></li>
+        <li><a routerLinkActive="activa" [routerLink] = "['/about']">About</a></li>
+        <li><a routerLinkActive="activa" [routerLink] = "['/contact']">Contacto</a></li>
+    </ul>
+    <ul>
+        <li><button (click)="onclick('about')">Sobre MI</button></li>
+        <li><button  (click)="onclick('contact')">Contacto</button></li>
+        <li><button  (click)="onclick('info')">Info</button></li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>
+
+<h1>services</h1>
+{{data|json}}
+<br>
+<button (click)="createData()">agregar</button>
+<button (click)="dataFalse()">Traer el false</button>

@@ -15,6 +15,14 @@ import { NgModelComponent } from './components/ng-model/ng-model.component';
 import { FormsModule } from '@angular/forms';
 import { CicloVidaComponent } from './components/ciclo-vida/ciclo-vida.component';
 import { DirectivasComponent } from './components/directivas/directivas.component';
+import { SubrayadoDirective } from './directivaPersonalizada/subrayado.directive';
+import { InfoComponent } from './rutas/info/info.component';
+import { AboutComponent } from './rutas/about/about.component';
+import { ContactComponent } from './rutas/contact/contact.component';
+import { InfoWorkComponent } from './rutas/info-work/info-work.component';
+import { DetallesComponent } from './rutas/detalles/detalles.component';
+import { CampoComponent } from './rutas/campo/campo.component';
+
 
 //este decorador crea la clase en un modulo de Angular
 @NgModule({
@@ -32,9 +40,16 @@ import { DirectivasComponent } from './components/directivas/directivas.componen
     NgModelComponent,
     CicloVidaComponent,
     DirectivasComponent,
+    SubrayadoDirective,
+    InfoComponent,
+    AboutComponent,
+    ContactComponent,
+    InfoWorkComponent,
+    DetallesComponent,
+    CampoComponent,
   ],
   // importacion de modulosesternos de Angular o terceros y que puedan utilizarlo nuestros elementos.
-   // formomodule para directiva  ngModuelo
+   // formsModule para directiva [(ngModule)]
   imports: [
     BrowserModule,
     AppRoutingModule,

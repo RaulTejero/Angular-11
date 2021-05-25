@@ -1,10 +1,51 @@
-<h1>Directivas</h1>
+<div>
+    <h1>Directivas</h1>
+    <h2>De atributo</h2>
+    <p [ngStyle]="{color:'red', fontSize:'24px'}">Directiva ngStyle</p>
+    <!-- recuerda evalua lo de la derecha -->
+    <p [ngStyle]="parrafoColor">Directiva ngStyle</p>
 
-<p [ngStyle]="{color:'red', fontSize:'24px'}">Directiva ngStyle</p>
-<!-- recuerda evalua lo de la derecha -->
-<p [ngStyle]="parrafoColor">Directiva ngStyle</p>
+
+    <input type="text" [(ngModel)]="color.color" [ngStyle]="color">
+    <br>
+    <input (input)="onInput($event)" type="range" min="0" max="100" step="10">
+
+    <!-- ngClass hace referencia a la clase que se pase por string -->
+    <p [ngClass]="clase">parrafo con la directiva [ngClass]</p>
 
 
-<input type="text" [(ngModel)]="color.color" [ngStyle]="color" >
-<br>
-<input (input)="onInput($event)" type="range" min="0" max="100" step="10">
+    <h2>De estructura</h2>
+    <h3>ngIf</h3>
+    <p>*ngIf=claseBoolean; else otroParrafo</p>
+    <p *ngIf="claseBoolean; else otroParrafo">ngIf ocultacion de elementos sugun la condicion true/false</p>
+    <!-- variable de  plantilla angular -->
+    <ng-template #otroParrafo>
+        <p>ngIf/else </p>
+    </ng-template>
+    <hr>
+    <!-- TODO: mejor -->
+    <p>ngIf aparece</p>
+    <p>ngIf !desaparece</p>
+    <p *ngIf="claseBoolean">ngIf aparece</p>
+    <p *ngIf="!claseBoolean">ngIf !desaparece</p>
+    <h3>ngFor</h3>
+    <p *ngFor="let nombre of nombres">
+        <!-- el hambito de la variable nombre no sale de aqui -->
+        {{nombre.primerNombre}} {{nombre.segundoNombre}}
+    </p>
+    <!-- appSubrayado es una directiva personalizada -->
+    <h3 [appSubrayado]="{colorHover: 'red',colorNoHover:'blue'}">ngSwitch <sub>el undeline es de una directivapersonalizada</sub></h3>
+    <p>segun seleciones una opcion</p>
+    <select (change)="onChange($event)">
+        <option value="1">uno</option>
+        <option value="2">dos</option>
+        <option value="otra">otra</option>
+        <option value="6">ninguna</option>
+    </select>
+    <div [ngSwitch]="opcionNumero">
+        <p *ngSwitchCase="1">Uno</p>
+        <p *ngSwitchCase="2">Dos</p>
+        <p *ngSwitchCase="'otra'">otra</p>
+        <p *ngSwitchDefault>ninguna de las anteriores</p>
+    </div>
+</div>

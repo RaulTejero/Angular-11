@@ -1,0 +1,7 @@
+h1 {
+    padding: 20px;
+    background-color: rgb(255, 150, 111);
+}
+div {
+    border: 20px solid rgb(255, 150, 111);
+}
