@@ -15,7 +15,6 @@ export class InfoWorkComponent implements OnInit {
   ngOnInit(): void {
 
     this.activateRoute.params.subscribe(params=>{
-      console.log(params);// 
       this.parametroRuta = params.infoWorkId;
       
     })

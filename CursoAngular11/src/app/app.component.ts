@@ -11,10 +11,12 @@ import { DataArrayService } from './services/data-array.service';
 })
 export class AppComponent implements OnInit {
   data: Data[];
+  numero: string;
   //importo router para navegar a la ruta por parametro de a funcion
   // importo un DataArrayService de dados locales
   constructor(private router: Router, private dataService: DataArrayService) {
-    // this.data = [];
+    this.data = [];
+    this.numero = "55";
   }
 
   ngOnInit() {
@@ -26,7 +28,13 @@ export class AppComponent implements OnInit {
 
   // funcion para ir a una ruta 
   onclick(pRuta: string) {
-    this.router.navigate([pRuta]);
+    if (pRuta === "info/") {
+      const ruta = pRuta+this.numero+"/detalles";
+      this.router.navigate([ruta])
+    } else {
+      this.router.navigate([pRuta]);
+    }
+    
   }
   createData(){
     this.dataService.create(new Data("ghfgh",4,"erg",true));
