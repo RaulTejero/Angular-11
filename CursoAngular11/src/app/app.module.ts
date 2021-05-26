@@ -12,7 +12,7 @@ import { PropertyBindingComponent } from './components/property-binding/property
 import { EventBindingComponent } from './components/event-binding/event-binding.component';
 import { CalcComponent } from './components/calc/calc.component';
 import { NgModelComponent } from './components/ng-model/ng-model.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CicloVidaComponent } from './components/ciclo-vida/ciclo-vida.component';
 import { DirectivasComponent } from './components/directivas/directivas.component';
 import { SubrayadoDirective } from './directivaPersonalizada/subrayado.directive';
@@ -22,6 +22,7 @@ import { ContactComponent } from './rutas/contact/contact.component';
 import { InfoWorkComponent } from './rutas/info-work/info-work.component';
 import { DetallesComponent } from './rutas/detalles/detalles.component';
 import { CampoComponent } from './rutas/campo/campo.component';
+import { FormulariosComponent } from './components/formularios/formularios.component';
 
 
 //este decorador crea la clase en un modulo de Angular
@@ -47,13 +48,15 @@ import { CampoComponent } from './rutas/campo/campo.component';
     InfoWorkComponent,
     DetallesComponent,
     CampoComponent,
+    FormulariosComponent,
   ],
   // importacion de modulosesternos de Angular o terceros y que puedan utilizarlo nuestros elementos.
    // formsModule para directiva [(ngModule)]
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] // componente principal que cargara la app.

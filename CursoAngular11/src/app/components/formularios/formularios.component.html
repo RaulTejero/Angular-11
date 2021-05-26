@@ -1,0 +1,51 @@
+<h1>Formularios</h1>
+<h3>template</h3>
+<!-- agregar el modulo en app.module > formsModule -->
+<!-- crear una variable template="ngForm" ngSubmit envia la variable y marcar con ngModel los datos que quieres el name es importante para identificar los datos  -->
+<form #variablePantilla = "ngForm" (ngSubmit)="onSubmit(variablePantilla.value)">
+    <input type="text" placeholder="nombre" name="nombre" ngModel>
+    <br>
+    <input type="date" name="dia" ngModel>
+    <br>
+    <input type="password" placeholder="password" name="password" ngModel>
+    <br>
+    <input type="submit" value="enviar" >
+</form>
+{{variablePantilla.value| json}} <br>
+ <!-- variable del ts -->
+{{valueFormTemplate|json}} 
+
+
+<h3>Model</h3>
+<!-- agregar el modulo en app.module > reactiveFormsModule -->
+<!-- [tipoFormGroup guarda enla variable formTypeModel ] -->
+<!-- enviar con el evento ngSubmit  -->
+<form [formGroup]="formTypeModel" (ngSubmit)="onSubmit2()">
+    <!-- formControlName  equibale al nombre del objeto en el .ts  -->
+    <input type="text" placeholder="nombre" formControlName="nombre">
+    <!-- contron especifico; formulario.controles.nombreContro.valido/invalido mejor la opcion dni -->
+    <p style="color: red" *ngIf="!formTypeModel.controls.nombre.valid && formTypeModel.dirty" >rellena el campo nombre entre 3 y 10</p>
+    {{formTypeModel.controls.nombre.errors| json}}
+    <br>
+    <input type="text" placeholder="dni" formControlName="dni">
+    <p style="color: red" *ngIf="formTypeModel.controls.dni.errors && formTypeModel.controls.dni.touched" >rellena el campo nombre entre 3 y 10</p>
+    {{formTypeModel.controls.dni.errors| json}}
+    <br>
+    <input type="date" formControlName="dia" >
+    <br>
+    <input type="number" placeholder="edad" formControlName="edad">
+    <br>
+    <input type="password" placeholder="password" formControlName="password">
+    <br>
+    <input type="password" placeholder="repite password" formControlName="repitePassword">
+    <br>
+    <input type="email" placeholder="email" formControlName="email">
+    <br>
+    <input type="submit" value="enviar" [disabled]="!formTypeModel.valid">
+  
+</form>  
+<!-- .valid son las validaciones = boolean par usar en nfIf-->
+<p>{{formTypeModel.valid}}</p>
+
+{{formTypeModel.value|json}} <br>
+{{valueFormModel|json}}
