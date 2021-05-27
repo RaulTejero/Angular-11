@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { element } from 'protractor';
 import { Data } from '../models/data.model'
 // disponible para todos los componentes
 @Injectable({

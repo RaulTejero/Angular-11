@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +14,6 @@ import { PropertyBindingComponent } from './components/property-binding/property
 import { EventBindingComponent } from './components/event-binding/event-binding.component';
 import { CalcComponent } from './components/calc/calc.component';
 import { NgModelComponent } from './components/ng-model/ng-model.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CicloVidaComponent } from './components/ciclo-vida/ciclo-vida.component';
 import { DirectivasComponent } from './components/directivas/directivas.component';
 import { SubrayadoDirective } from './directivaPersonalizada/subrayado.directive';
@@ -23,6 +24,7 @@ import { InfoWorkComponent } from './rutas/info-work/info-work.component';
 import { DetallesComponent } from './rutas/detalles/detalles.component';
 import { CampoComponent } from './rutas/campo/campo.component';
 import { FormulariosComponent } from './components/formularios/formularios.component';
+import { HttpclientComponent } from './components/httpclient/httpclient.component';
 
 
 //este decorador crea la clase en un modulo de Angular
@@ -49,14 +51,18 @@ import { FormulariosComponent } from './components/formularios/formularios.compo
     DetallesComponent,
     CampoComponent,
     FormulariosComponent,
+    HttpclientComponent,
   ],
   // importacion de modulosesternos de Angular o terceros y que puedan utilizarlo nuestros elementos.
-   // formsModule para directiva [(ngModule)]
+   // formsModule para directiva [(ngModule)] y formularios
+   // reactiveFormsModule para forms
+   // httpclientModule para peticiones
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent] // componente principal que cargara la app.
