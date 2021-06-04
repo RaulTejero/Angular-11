@@ -5,5 +5,9 @@ url
 headers
 body -->
 <p *ngFor="let prueba of data" (click)="onClick(prueba.userId)">{{prueba.title}} </p>
+<p>{{post|json}}</p>
 <button (click)="postClick()">enviar post</button>
-<p></p>
+<button (click)="upDateClick()">actualizar</button>
+<button (click)="recived()">Recibir mensaje</button>
+<!-- <p>{{message.message}}</p> -->
+<p>{{message.title}}</p>

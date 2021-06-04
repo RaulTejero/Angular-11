@@ -1,0 +1,61 @@
+<h1>Pipes</h1>
+
+
+<p>precio: {{precio}}</p>
+<p>precio: {{precio | currency}}</p>
+<!-- 3.344,55 US$ -->
+<!-- para cambiar la divisa pasar parametro -->
+<p>precio: {{precio | currency:'EUR':'symbol'}}</p>
+<!-- para cambiar lod digitos parte entera, parte decimal, numeros decimales visibles-->
+<p>precio: {{precio | currency:'EUR':'symbol':'1.1-1'}}</p>
+
+
+<p>{{decimal | number}}</p>
+<!-- 34,79 redondea a dos decimales-->
+<p>{{decimal | number: "1.1-6"}}</p>
+<!-- 34,789635 -->
+
+
+<p>{{date}}</p>
+<!-- cambia a español por las modificacione sen app.module  -->
+<p>{{date | date}}</p>
+<p>{{date | date: "short"}}</p><!-- predefinidas  -->
+<p>{{date | date:"dd-MM-yy"}}</p>
+<p>{{date | date:"dd-LLLL-yy  HH:mm:ss"}}</p><!--personalizadas-->
+
+
+<p>{{porcient}}</p>
+<!-- 0.38612914259722264 -->
+<p>{{porcient | percent}}</p>
+<!-- 39 % -->
+
+
+<p>{{text}}</p>
+<!-- "Esto es un texto de Pepe" -->
+<p>{{text | uppercase}}</p>
+<!-- ESTO ES UN TEXTO DE PEPE -->
+<p>{{text | lowercase}}</p>
+<!-- esto es un texto de pepe -->
+<p>{{text | titlecase}}</p>
+<!-- Esto Es Un Texto De Pepe -->
+
+
+<ul>
+    <li *ngFor="let animal of slicePipe">{{animal}}</li>
+</ul>
+<!-- ["perro","gato", "pajaro","pez","ballena","tortuga"] -->
+<ul >
+    <!-- indice de comienzo y fin  -->
+    <li *ngFor="let animal of slicePipe | slice:0:2">{{animal}}</li>
+</ul>
+<!-- "perro","gato" -->
+
+
+<p>mensaje ; {{prom | async}}</p>
+<ul>
+    <!-- <li *ngFor="let post of promPostService|async">{{post.title}}</li> -->
+</ul>
+
+<!-- pipe personalizado ,generar pipe y pasar modificaciones  -->
+<!-- <p>{{text | reverso}}</p> -->
+<!-- epeP ed otxet nu se otsE -->

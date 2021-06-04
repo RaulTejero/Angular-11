@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule , LOCALE_ID/* provaider para los pipes español meterlo en provaider*/ } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule} from '@angular/common/http';// para peticiones
+import localeEs from '@angular/common/locales/es';// para que los pipes sean en español Libreria
+import {registerLocaleData} from '@angular/common'; //metodo para aplicar localEs
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';//importar animaciones
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +29,16 @@ import { DetallesComponent } from './rutas/detalles/detalles.component';
 import { CampoComponent } from './rutas/campo/campo.component';
 import { FormulariosComponent } from './components/formularios/formularios.component';
 import { HttpclientComponent } from './components/httpclient/httpclient.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { ReversoPipe } from './pipesPersonalizados/reverso.pipe';
+import { AnimacionesComponent } from './components/animaciones/animaciones.component';
+import { MapalibComponent } from './components/mapalib/mapalib.component';
+import { MapanativComponent } from './components/mapanativ/mapanativ.component';
+import { TestingComponent } from './components/testing/testing.component';
 
+
+
+registerLocaleData(localeEs);// ejecutar pipes español
 
 //este decorador crea la clase en un modulo de Angular
 @NgModule({
@@ -52,19 +65,29 @@ import { HttpclientComponent } from './components/httpclient/httpclient.componen
     CampoComponent,
     FormulariosComponent,
     HttpclientComponent,
+    PipesComponent,
+    ReversoPipe,
+    AnimacionesComponent,
+    MapalibComponent,
+    MapanativComponent,
+    TestingComponent,
   ],
   // importacion de modulosesternos de Angular o terceros y que puedan utilizarlo nuestros elementos.
-   // formsModule para directiva [(ngModule)] y formularios
-   // reactiveFormsModule para forms
-   // httpclientModule para peticiones
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    FormsModule, // formsModule para directiva [(ngModule)] y formularios
+    ReactiveFormsModule, // reactiveFormsModule para forms
+    HttpClientModule, // httpclientModule para peticiones
+    BrowserAnimationsModule, // animaciones
+    AgmCoreModule.forRoot({
+      apiKey: 'api' 
+    })
   ],
-  providers: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: "es-ES"}
+  ],
   bootstrap: [AppComponent] // componente principal que cargara la app.
 })
 // exportacion de la clase para importar donde se necesite

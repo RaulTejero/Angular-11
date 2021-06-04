@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from 'src/app/services/posts.service';
+import { Message, PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-httpclient',
@@ -10,11 +10,17 @@ export class HttpclientComponent implements OnInit {
   data: any;
   dataDeUno: any;
   bodyrequest: any;
+  post: any;
+  message: Message;
   constructor(private postservice: PostsService) {
     this.bodyrequest = {
       title: "nuevo titulo",
       body: "jhsdfj",
       userId: 40404
+    }
+    this.message = {
+      title:"",
+      message:""
     }
   }
 
@@ -40,11 +46,24 @@ export class HttpclientComponent implements OnInit {
   async postClick() {
     try {
       const result = await this.postservice.post(this.bodyrequest);
-      console.log(result);
-      
+      this.post = result;
     } catch (error) {
       console.log(error);
     }
+  }
+  async upDateClick() {
+    try {
+      const body = await this.postservice.put({ id: 1, title: "cambio", body: "cambio", userId: 5464 });
+      this.post = body;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  recived(){
+    this.message = this.postservice.logMessage();
+    console.log(this.message);
+    
+    
   }
 
 }
